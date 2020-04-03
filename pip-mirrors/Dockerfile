@@ -2,10 +2,10 @@ FROM python:3.7
 
 RUN pip install pip2pi
 
-COPY cmd.sh /usr/bin/cmd.sh
+COPY entrypoint.sh /usr/bin/entrypoint.sh
 COPY pip.config /root/.pip/pip.config
 
-ENTRYPOINT ["/usr/bin/cmd.sh"]
+ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 
 CMD []
 
