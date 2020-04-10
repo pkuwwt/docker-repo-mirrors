@@ -36,10 +36,10 @@ shell_serve:
 	sudo docker exec -it $(OFFLINE_SERVER) sh
 
 stop_proxy:
-	sudo docker stop $(PROXY_SERVER) >/dev/null 2>&1
+	-@sudo docker stop $(PROXY_SERVER) >/dev/null 2>&1
 
 stop_server:
-	sudo docker stop $(OFFLINE_SERVER) >/dev/null 2>&1
+	-@sudo docker stop $(OFFLINE_SERVER) >/dev/null 2>&1
 
 rm_server:
 	-@sudo docker stop $(OFFLINE_SERVER) >/dev/null 2>&1 || true

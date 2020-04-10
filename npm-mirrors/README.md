@@ -27,3 +27,5 @@ NPM_PORT=4873 make install
 NPM_STORAGE_DIR=./storage NPM_PORT=4873 make serve
 ```
 
+There is a sample [`~/.npmrc`](./npmrc) file and a wrapper script [`npm.sh`](./npm.sh).
+
