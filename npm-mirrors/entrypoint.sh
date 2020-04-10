@@ -1,8 +1,10 @@
 #!/bin/sh
 
+VERDACCIO='verdaccio -l 0.0.0.0:4873'
+
 proxy() {
 	node --version
-	verdaccio -c /usr/local/verdaccio/config.yaml
+	$VERDACCIO -c /usr/local/verdaccio/config.yaml
 }
 
 download () {
@@ -15,7 +17,7 @@ install () {
 }
 
 serve() {
-	verdaccio -c /usr/local/verdaccio/config_offline.yaml
+	$VERDACCIO -c /usr/local/verdaccio/config_offline.yaml
 }
 
 cmd=$1

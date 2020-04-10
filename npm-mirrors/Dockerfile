@@ -14,8 +14,9 @@ RUN chmod +x /usr/bin/entrypoint.sh
 
 WORKDIR /tmp/cache
 
+EXPOSE 4873
+
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 
 CMD []
 
-EXPOSE 4873
