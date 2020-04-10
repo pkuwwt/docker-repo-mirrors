@@ -15,9 +15,9 @@ set _tilde 0
 #
 ############# end config ##############
 
-deb-amd64 https://mirrors.tuna.tsinghua.edu.cn/ubuntu xenial main universe
-deb-amd64 https://mirrors.tuna.tsinghua.edu.cn/ubuntu xenial-updates main universe
-deb-amd64 https://mirrors.tuna.tsinghua.edu.cn/ubuntu xenial-security main universe
-deb-amd64 https://mirrors.tuna.tsinghua.edu.cn/ubuntu bionic main universe
+#deb-amd64 https://mirrors.tuna.tsinghua.edu.cn/ubuntu xenial main universe
+#deb-amd64 https://mirrors.tuna.tsinghua.edu.cn/ubuntu xenial-updates main universe
+#deb-amd64 https://mirrors.tuna.tsinghua.edu.cn/ubuntu xenial-security main universe
+#deb-amd64 https://mirrors.tuna.tsinghua.edu.cn/ubuntu bionic main universe
 deb-amd64 https://mirrors.tuna.tsinghua.edu.cn/ubuntu bionic-updates main universe
 deb-amd64 https://mirrors.tuna.tsinghua.edu.cn/ubuntu bionic-security main universe
