@@ -1,6 +1,8 @@
 FROM andreysenov/node-gyp
 
 RUN npm config set registry https://registry.npm.taobao.org
+
+USER root
 RUN npm install -g verdaccio --unsafe-perm
 
 RUN mkdir -p /usr/local/verdaccio/storage
@@ -13,5 +15,7 @@ RUN chmod +x /usr/bin/entrypoint.sh
 WORKDIR /tmp/cache
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
+
+CMD []
 
 EXPOSE 4873

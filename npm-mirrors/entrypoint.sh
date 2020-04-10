@@ -1,13 +1,17 @@
-#!/bin/bash
+#!/bin/sh
 
 proxy() {
 	node --version
 	verdaccio -c /usr/local/verdaccio/config.yaml
 }
 
+download () {
+	npm install -i 127.0.0.1:${NPM_PORT:-4873} $*
+}
+
 # install for a package.json
 install () {
-	npm install $*
+	npm install -i 127.0.0.1:${NPM_PORT:-4873}
 }
 
 serve() {
@@ -21,11 +25,17 @@ case $cmd in
 	proxy)
 		proxy
 		;;
+	download)
+		download $*
+		;;
 	install)
 		install
 		;;
 	serve)
 		serve
+		;;
+	shell)
+		sh $*
 		;;
 	*)
 		serve
