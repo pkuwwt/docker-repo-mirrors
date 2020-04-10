@@ -27,7 +27,7 @@ install:
 	npm --registry http://127.0.0.1:$(NPM_PORT) install
 
 serve:
-	sudo docker run -d --name $(OFFLINE_SERVER) -v $(STORAGE_DIR):/usr/local/verdaccio/storage -p 0.0.0.0:$(NPM_NPM_PORT):4873 $(NAME) serve
+	sudo docker run -d --name $(OFFLINE_SERVER) -v $(STORAGE_DIR):/usr/local/verdaccio/storage -p 0.0.0.0:$(NPM_PORT):4873 $(NAME) serve
 
 shell_proxy:
 	sudo docker exec -it $(PROXY_SERVER) sh
@@ -36,7 +36,12 @@ shell_serve:
 	sudo docker exec -it $(OFFLINE_SERVER) sh
 
 stop_proxy:
-	sudo docker stop $(PROXY_SERVER) 
+	sudo docker stop $(PROXY_SERVER) >/dev/null 2>&1
 
 stop_server:
-	sudo docker stop $(OFFLINE_SERVER)
+	sudo docker stop $(OFFLINE_SERVER) >/dev/null 2>&1
+
+rm_server:
+	-@sudo docker stop $(OFFLINE_SERVER) >/dev/null 2>&1 || true
+	-@sudo docker rm $(OFFLINE_SERVER) >/dev/null 2>&1 || true
+
