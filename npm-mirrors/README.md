@@ -18,7 +18,7 @@ NPM_STORAGE_DIR=./storage NPM_PORT=4873 make proxy
 Use the proxy server to install packages for package.json in current dir
 
 ```bash
-NPM_PORT make install
+NPM_PORT=4873 make install
 ```
 
 ## Start a npm server for offline usage
